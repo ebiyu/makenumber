@@ -14,8 +14,6 @@ class frac
     int denominator=1; //分母
     int numerator;//分子
     
-    void reduction();//約分
-    
     int gcd(int value1,int value2);
 public:
     //constructor
@@ -39,6 +37,9 @@ public:
     void setnumerator(int const value);
     void setfrac(int numerator,int denominator);
     void setint(int value);
+    
+    //reduction
+    void reduction();
     
     //operater override
     frac operator+(const frac value);
