@@ -84,7 +84,7 @@ void frac::reduction(){
 //operatoe override
 frac frac::operator+(const frac value){
     int lcm=value.denominator*this->denominator/gcd(value.denominator,this->denominator);
-    int numerator=value.numerator*value.denominator/lcm+this->numerator*this->denominator/lcm;
+    int numerator=value.numerator*lcm/value.denominator+this->numerator*lcm/this->denominator;
     frac ret=frac(numerator,lcm);
     ret.reduction();
     return ret;
