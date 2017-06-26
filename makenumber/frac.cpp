@@ -85,7 +85,7 @@ void frac::reduction(){
 frac frac::operator+(const frac value){
     int lcm=value.denominator*this->denominator/gcd(value.denominator,this->denominator);
     int numerator=value.numerator*value.denominator/lcm+this->numerator*this->denominator/lcm;
-    frac ret=frac(numerator/lcm);
+    frac ret=frac(numerator,lcm);
     ret.reduction();
     return ret;
 }
