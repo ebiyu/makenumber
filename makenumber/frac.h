@@ -53,6 +53,7 @@ public:
     bool isint();
     int getint();
     float getfloat();
+    std::string ToString();
 };
 
 #endif /* frac_h */

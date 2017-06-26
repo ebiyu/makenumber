@@ -10,6 +10,7 @@
 #include <iostream>
 #include "frac.h"
 #include <cstdlib>
+#include <string>
 
 //constructor
 frac::frac(){
@@ -121,4 +122,7 @@ int frac::getint(){
 }
 float frac::getfloat(){
     return getnumerator()/getdenominator();
+}
+std::string frac::ToString(){
+    return std::to_string(this->numerator)+"/"+std::to_string(this->denominator);
 }
