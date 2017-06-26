@@ -13,6 +13,9 @@
 
 
 int main(int argc, const char * argv[]) {
+    //    calculate calc1(4);
+    //    std::cout << calc1.eval((frac[]){frac(3),frac(8),frac(2),frac(2)}, (op[]){plus,minus,divide}, (int[]){0,2,1}).ToString();
+    //    return 0;
     const int dig=4;
     int num[dig];
     int target;
@@ -60,6 +63,7 @@ int main(int argc, const char * argv[]) {
                             break;
                         case 3:
                             operators[j]=divide;
+                            break;
                     }
                     iNum=iNum/4;
                 }
