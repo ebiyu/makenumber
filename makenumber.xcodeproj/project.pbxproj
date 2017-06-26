@@ -28,7 +28,6 @@
 		000BDD381F00D91800936358 /* makenumber */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = makenumber; sourceTree = BUILT_PRODUCTS_DIR; };
 		000BDD3B1F00D91800936358 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		000BDD421F00DA9E00936358 /* calculate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = calculate.h; sourceTree = "<group>"; };
-		000BDD431F00DAB000936358 /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
 		000BDD441F00DF7800936358 /* frac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = frac.h; sourceTree = "<group>"; };
 		000BDD451F00E07200936358 /* frac.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = frac.cpp; sourceTree = "<group>"; };
 		009FBB851F0102B0001C178A /* calculate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = calculate.cpp; sourceTree = "<group>"; };
@@ -67,7 +66,6 @@
 				000BDD3B1F00D91800936358 /* main.cpp */,
 				000BDD421F00DA9E00936358 /* calculate.h */,
 				009FBB851F0102B0001C178A /* calculate.cpp */,
-				000BDD431F00DAB000936358 /* main.h */,
 				000BDD441F00DF7800936358 /* frac.h */,
 				000BDD451F00E07200936358 /* frac.cpp */,
 			);
