@@ -40,7 +40,11 @@ int main(int argc, const char * argv[]) {
         }
         do{
             //operators select
-            for(int i=0;i<(4^(dig-1)-1);i++){
+            int pow=1;
+            for(int i=0;i<dig-1;i++){
+                pow*=4;
+            }
+            for(int i=0;i<pow;i++){
                 int iNum=i;
                 op operators[dig-1];
                 for(int j=0;j<dig-1;j++){
