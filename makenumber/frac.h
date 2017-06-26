@@ -47,8 +47,7 @@ public:
     frac operator-(const frac value);
     frac operator*(const frac value);
     frac operator/(const frac value);
-    
-    bool operator=(const frac value);
+    frac& operator=(const frac value);
     
     //output
     bool isint();

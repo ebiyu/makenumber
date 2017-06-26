@@ -108,6 +108,13 @@ frac frac::operator/(const frac value){
    
 }
 
+frac& frac::operator=(const frac value){
+    this->setnumerator(value.numerator);
+    this->setdenominator(value.denominator);
+    
+    return *this;
+}
+
 
 //output
 bool frac::isint(){
