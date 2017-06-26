@@ -8,6 +8,7 @@
 
 #ifndef frac_h
 #define frac_h
+#include<string>
 
 class frac
 {
