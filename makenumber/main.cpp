@@ -64,16 +64,28 @@ int main(int argc, const char * argv[]) {
                 calculate calc1(dig);
                 frac result=calc1.eval(numbers, operators, calcOrders);
                 if(result.isint()&&result.getint()==target){
-                    std::cout << "num ";
                     for(int j=0;j<dig-1;j++){
-                        std::cout << numbers[j].getint() << operators[j];
+                        std::cout << numbers[j].getint();
+                        switch (operators[j]) {
+                            case plus:
+                                std::cout << "+";
+                                break;
+                            case minus:
+                                std::cout << "-";
+                                break;
+                            case times:
+                                std::cout << "*";
+                                break;
+                            case divide:
+                                std::cout << "/";
+                        }
                     }
-                    std::cout << numbers[dig-1].getint() << "\n";
-                    std::cout << "order ";
+                    std::cout << numbers[dig-1].getint();
+                    std::cout << "(order:";
                     for(int j=0;j<dig-1;j++){
                         std::cout << calcOrders[j] << "," ;
                     }
-                    std::cout << "\n";
+                    std::cout << ")\n";
                 }
             }
         }while(std::next_permutation(calcOrders, calcOrders+dig-1));
