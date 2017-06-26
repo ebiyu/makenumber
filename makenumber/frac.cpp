@@ -118,7 +118,7 @@ frac& frac::operator=(const frac value){
 
 //output
 bool frac::isint(){
-    if (getnumerator()/getdenominator()==getint()) {
+    if ((float)getnumerator()/getdenominator()==getint()) {
         return true;
     }else{
         return false;
