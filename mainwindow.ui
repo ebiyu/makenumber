@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -46,7 +46,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="resultBox"/>
+        <widget class="QLineEdit" name="targetBox"/>
        </item>
       </layout>
      </item>
@@ -65,21 +65,10 @@
       </widget>
      </item>
      <item>
-      <widget class="QListView" name="resultList"/>
+      <widget class="QListWidget" name="resultList"/>
      </item>
     </layout>
    </widget>
-   <zorder>pushButton</zorder>
-   <zorder>numBox1</zorder>
-   <zorder>numBox2</zorder>
-   <zorder>numBox3</zorder>
-   <zorder>numBox4</zorder>
-   <zorder>numBox1</zorder>
-   <zorder>label</zorder>
-   <zorder>label_2</zorder>
-   <zorder>resultBox</zorder>
-   <zorder></zorder>
-   <zorder>resultList</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
@@ -88,9 +77,8 @@
   <tabstop>numBox2</tabstop>
   <tabstop>numBox3</tabstop>
   <tabstop>numBox4</tabstop>
-  <tabstop>resultBox</tabstop>
+  <tabstop>targetBox</tabstop>
   <tabstop>pushButton</tabstop>
-  <tabstop>resultList</tabstop>
  </tabstops>
  <resources/>
  <connections/>

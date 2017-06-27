@@ -1,30 +1,43 @@
 //
-//  main.cpp
+//  mainwindow.cpp
 //  makenumber
 //
 //  Created by 海老原祐輔 on 2017/06/26.
 //  Copyright © 2017年 海老原祐輔. All rights reserved.
 //
 
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+
 #include <iostream>
 #include <algorithm>
 #include "frac.h"
 #include "calculate.h"
+#include <string>
 
+MainWindow::MainWindow(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+}
 
-int main(int argc, const char * argv[]) {
-    //    calculate calc1(4);
-    //    std::cout << calc1.eval((frac[]){frac(3),frac(8),frac(2),frac(2)}, (op[]){plus,minus,divide}, (int[]){0,2,1}).ToString();
-    //    return 0;
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+void MainWindow::on_pushButton_clicked()
+{
     const int dig=4;
     int num[dig];
     int target;
-    std::cin >> num[0];
-    std::cin >> num[1];
-    std::cin >> num[2];
-    std::cin >> num[3];
-    std::cin >> target;
-    
+    num[0]=ui->numBox1->text().toInt();
+    num[1]=ui->numBox2->text().toInt();
+    num[2]=ui->numBox3->text().toInt();
+    num[3]=ui->numBox4->text().toInt();
+    target=ui->targetBox->text().toInt();
+
     //number sort
     int numIndex[dig];
     for(int i=0;i<dig;i++){
@@ -35,7 +48,7 @@ int main(int argc, const char * argv[]) {
         for(int i=0;i<dig;i++){
             numbers[i].setint(num[numIndex[i]]);
         }
-        
+
         //calculateOrder sort
         int calcOrders[dig-1];
         for(int i=0;i<dig-1;i++){
@@ -67,46 +80,48 @@ int main(int argc, const char * argv[]) {
                     }
                     iNum=iNum/4;
                 }
-                
+
                 //calculate
                 calculate calc1(dig);
                 try{
                     frac result=calc1.eval(numbers, operators, calcOrders);
                     if(result.isint()&&result.getint()==target){
+                        QString result;
                         for(int j=0;j<dig-1;j++){
-                            std::cout << numbers[j].getint();
+                            result+=QString().setNum(numbers[j].getint());
                             switch (operators[j]) {
                                 case plus:
-                                    std::cout << "+";
+                                    result+="+";
                                     break;
                                 case minus:
-                                    std::cout << "-";
+                                    result+="-";
                                     break;
                                 case times:
-                                    std::cout << "*";
+                                    result+="*";
                                     break;
                                 case divide:
-                                    std::cout << "/";
+                                    result+="/";
                             }
                         }
-                        std::cout << numbers[dig-1].getint();
-                        std::cout << "(order:";
-                        for(int j=0;j<dig-1;j++){
-                            std::cout << calcOrders[j] << "," ;
+                        result+=QString().setNum(numbers[dig-1].getint());
+                        result=result+"(order:";
+                        for(int j=0;j<dig-2;j++){
+                            result+=QString().setNum(calcOrders[j]);
+                            result=result+"," ;
                         }
-                        std::cout << ")\n";
+                        result+=QString().setNum(calcOrders[dig-2]);
+                        result+=")";
+
+                        ui->resultList->addItem(QString(result));
                     }
                 }catch(const std::range_error e){
-                    
+
                 }
-                
-                
+
+
             }
         }while(std::next_permutation(calcOrders, calcOrders+dig-1));
-        
-        
+
+
     }while(std::next_permutation(numIndex, numIndex+dig));
-    
-    
-    return 0;
 }
