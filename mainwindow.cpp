@@ -29,6 +29,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
+    ui->pushButton->setEnabled(false);
+    QApplication::processEvents(QEventLoop::ExcludeUserInputEvents);
+
     const int dig=4;
     int num[dig];
     int target;
@@ -124,4 +127,6 @@ void MainWindow::on_pushButton_clicked()
 
 
     }while(std::next_permutation(numIndex, numIndex+dig));
+
+    ui->pushButton->setEnabled(true);
 }
