@@ -41,6 +41,8 @@ void MainWindow::on_pushButton_clicked()
     num[3]=ui->numBox4->text().toInt();
     target=ui->targetBox->text().toInt();
 
+    ui->resultList->clear();
+
     //number sort
     int numIndex[dig];
     for(int i=0;i<dig;i++){
