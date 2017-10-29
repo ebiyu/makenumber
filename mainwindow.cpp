@@ -130,5 +130,9 @@ void MainWindow::on_pushButton_clicked()
 
     }while(std::next_permutation(numIndex, numIndex+dig));
 
+    if (ui->resultList->count()==0) {
+        ui->resultList->addItem("no result");
+    }
+
     ui->pushButton->setEnabled(true);
 }
